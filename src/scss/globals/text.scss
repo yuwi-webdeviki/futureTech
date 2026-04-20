@@ -1,0 +1,160 @@
+@use '../mixins';
+
+.heading {
+  &-h1 {
+    font-size: 80px;
+    line-height: 1.3;
+
+    @include mixins.laptop {
+      font-size: 55px;
+    }
+
+    @include mixins.tablet {
+      font-size: 40px;
+    }
+
+    @include mixins.mobile {
+      font-size: 28px;
+    }
+  }
+
+  &-h2 {
+    font-size: 70px;
+    line-height: 1.2;
+
+    @include mixins.laptop {
+      font-size: 55px;
+    }
+
+    @include mixins.tablet {
+      font-size: 40px;
+    }
+
+    @include mixins.mobile {
+      font-size: 30px;
+    }
+  }
+
+  &-h3 {
+    font-size: 64px;
+    line-height: 1.5;
+
+    @include mixins.laptop {
+      font-size: 44px;
+    }
+
+    @include mixins.tablet {
+      font-size: 36px;
+    }
+
+    @include mixins.mobile {
+      font-size: 28px;
+    }
+  }
+
+  &-h4 {
+    font-size: 58px;
+    line-height: 1.3;
+
+    @include mixins.laptop {
+      font-size: 44px;
+    }
+
+    @include mixins.mobile {
+      font-size: 28px;
+    }
+  }
+
+  &-h5 {
+    font-size: 40px;
+    line-height: 1.5;
+
+    @include mixins.laptop {
+      font-size: 24px;
+    }
+
+    @include mixins.mobile {
+      font-size: 20px;
+    }
+  }
+
+  &-h6 {
+    font-size: 30px;
+    line-height: 1.2;
+
+    @include mixins.laptop {
+      font-size: 22px;
+    }
+
+    @include mixins.mobile {
+      font-size: 18px;
+    }
+  }
+}
+
+.text {
+  &-p {
+    &-subtitle {
+      font-size: 28px;
+
+      @include mixins.laptop {
+        font-size: 22px;
+      }
+
+      @include mixins.mobile {
+        font-size: 18px;
+      }
+    }
+
+    &-large {
+      font-size: 24px;
+
+      @include mixins.laptop {
+        font-size: 20px;
+      }
+
+      @include mixins.mobile {
+        font-size: 18px;
+      }
+    }
+
+    &-medium {
+      font-size: 22px;
+
+      @include mixins.laptop {
+        font-size: 18px;
+      }
+    }
+
+    &-small {
+      font-size: 20px;
+
+      @include mixins.laptop {
+        font-size: 16px;
+      }
+    }
+
+    &-default {
+      font-size: 18px;
+      line-height: 1.5;
+
+      @include mixins.laptop {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.text-grey-bg {
+  border-radius: 4px;
+  padding: 6px 10px;
+  width: max-content;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-light);
+  background-color: var(--color-dark-20);
+
+  @include mixins.laptop {
+    padding: 4px 8px;
+  }
+}

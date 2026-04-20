@@ -1,0 +1,176 @@
+@use '../mixins';
+
+.header {
+  &__promo {
+    padding-block: 20px;
+
+    &-link {
+      @include mixins.flex-all-center;
+      gap: 10px;
+      font-weight: 400;
+      text-align: center;
+      color: var(--color-grey-60);
+      transition: color var(--transition);
+
+      &:hover {
+        color: var(--color-accent);
+      }
+
+      @include mixins.mobile {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__body {
+    border-top: var(--border);
+    border-bottom: var(--border);
+    background-color: var(--color-dark-10);
+  }
+
+  &__container {
+    @include mixins.flex-all-between;
+    padding-block: 24px;
+
+    @include mixins.laptop {
+      padding-block: 20px;
+    }
+  }
+
+  @include mixins.laptop {
+    &__logo {
+      width: 143px;
+      height: 40px;
+    }
+  }
+
+  &__overlay {
+    display: contents;
+
+    @include mixins.tablet {
+      @include mixins.flex-column-all-center;
+      position: fixed;
+      inset: 0;
+      padding: 1px;
+      background-color: var(--color-dark-10);
+      transition-duration: var(--transition);
+      row-gap: 3px;
+
+      &:not(.is-active) {
+        @include mixins.hide;
+        translate: 100%;
+      }
+    }
+  }
+
+  &__nav {
+    @include mixins.tablet {
+      margin-bottom: 20px;
+    }
+
+    &-list {
+      @include mixins.flex-align-center;
+      gap: 16px;
+
+      @include mixins.tablet {
+        gap: 20px;
+        flex-direction: column;
+      }
+    }
+
+    &-link {
+      padding: 14px 24px;
+      color: var(--color-grey-60);
+      transition: color var(--transition);
+
+      &.is-active {
+        border: 1px solid var(--color-dark-20);
+        border-radius: 10px;
+        color: var(--color-light);
+        background-color: var(--color-dark);
+      }
+
+      &:hover {
+        color: var(--color-accent);
+      }
+
+      @include mixins.laptop {
+        border-radius: 6px;
+        padding: 10px 18px;
+      }
+    }
+  }
+
+  &__contact {
+    border-radius: 10px;
+    padding: 14px 20px;
+    font-weight: 500;
+    color: var(--color-dark);
+    background: var(--color-accent);
+    transition-property: color, border, background;
+    transition-duration: var(--transition);
+
+    &:hover {
+      border: 1px solid var(--color-accent);
+      color: var(--color-grey-60);
+      background: var(--color-dark-10);
+    }
+
+    @include mixins.laptop {
+      border-radius: 6px;
+      padding: 10px 14px;
+    }
+  }
+
+  &__burger-button {
+    display: none;
+
+    @include mixins.tablet {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: none;
+      padding: 8.5px 4.5px;
+      width: 34px;
+      height: 34px;
+      color: var(--color-light);
+      background-color: transparent;
+      transition: color var(--transition);
+
+      &:hover {
+        color: var(--color-accent);
+      }
+
+      &.is-active {
+        .header__burger-button-line {
+          &:first-child {
+            transform-origin: 0;
+            rotate: 45deg;
+            translate: 0.25em -0.1em;
+          }
+
+          &:nth-child(2) {
+            rotate: -45deg;
+          }
+
+          &:last-child {
+            width: 0;
+          }
+        }
+      }
+
+      &-line {
+        border-radius: 5px;
+        width: 100%;
+        height: 2px;
+        background-color: currentcolor;
+        transition-duration: var(--transition);
+
+        &:last-child {
+          align-self: end;
+          width: 55%;
+        }
+      }
+    }
+  }
+}

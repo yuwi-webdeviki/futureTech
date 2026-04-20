@@ -1,0 +1,363 @@
+@use '../../mixins';
+
+.hero {
+  overflow: hidden;
+
+  &__top {
+    @include mixins.flex-align-center;
+
+    @include mixins.tablet {
+      flex-direction: column;
+    }
+
+    &-left {
+      border-right: var(--border);
+      padding-top: 150px;
+
+      @include mixins.laptop {
+        padding-top: 100px;
+      }
+
+      @include mixins.tablet {
+        border: none;
+        padding-top: 80px;
+      }
+
+      @include mixins.mobile {
+        padding-top: 40px;
+      }
+
+      &-titles {
+        padding-right: 20px;
+        padding-bottom: 100px;
+        max-width: 890px;
+
+        @include mixins.laptop {
+          max-width: 620px;
+        }
+
+        @include mixins.tablet {
+          padding-bottom: 60px;
+          max-width: 900px;
+        }
+
+        @include mixins.mobile {
+          padding-bottom: 30px;
+        }
+
+        &.container {
+          margin-right: 0;
+          margin-left: auto;
+        }
+      }
+
+      &-nums {
+        @include mixins.flex-align-center;
+        position: relative;
+        align-items: start;
+        justify-self: end;
+        width: fit-content;
+
+        @include mixins.tablet {
+          justify-self: start;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: -1px;
+          right: 0;
+          width: 150vw;
+          height: 1px;
+          background-color: var(--color-dark-15);
+
+          @include mixins.tablet {
+            left: -100px;
+          }
+        }
+      }
+    }
+
+    &-right {
+      position: relative;
+      align-self: end;
+      padding-bottom: 80px;
+      padding-left: 80px;
+
+      @include mixins.laptop {
+        padding-bottom: 50px;
+        padding-left: 50px;
+      }
+
+      @include mixins.tablet {
+        align-self: start;
+        padding: 100px 40px 40px;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -420px;
+        left: 0;
+        z-index: var(--z-index-negative);
+        width: 606px;
+        height: 894px;
+        background-image: url('../../assets/images/home/hero-design.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        opacity: 0.3;
+        pointer-events: none;
+
+        @include mixins.laptop {
+          top: -270px;
+          width: 422px;
+          height: 622px;
+        }
+
+        @include mixins.tablet {
+          top: 0;
+          left: -15px;
+        }
+      }
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 30px;
+    font-weight: 500;
+    color: var(--color-dark-40);
+
+    @include mixins.laptop {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: var(--color-light);
+
+    @include mixins.laptop {
+      margin-bottom: 14px;
+    }
+  }
+
+  &__descr {
+    font-weight: 400;
+    color: var(--color-grey-50);
+  }
+
+  &__num {
+    border-right: var(--border);
+    padding: 50px;
+    width: 347px;
+
+    @include mixins.laptop {
+      padding: 30px 40px;
+      width: 280px;
+    }
+
+    @include mixins.small-laptop {
+      width: 200px;
+    }
+
+    @include mixins.tablet {
+      width: 100%;
+    }
+
+    @include mixins.mobile {
+      padding: 20px;
+    }
+
+    &:first-child {
+      padding-left: 0;
+      width: 297px;
+
+      @include mixins.laptop {
+        width: 240px;
+      }
+
+      @include mixins.small-laptop {
+        width: 200px;
+      }
+
+      @include mixins.tablet {
+        width: 100%;
+      }
+    }
+
+    &:last-child {
+      border: none;
+    }
+
+    &-number {
+      margin-bottom: 10px;
+      font-weight: 600;
+      color: var(--color-light);
+
+      &--accent {
+        color: var(--color-accent);
+      }
+
+      @include mixins.mobile {
+        margin-bottom: 0;
+      }
+    }
+
+    &-descr {
+      font-weight: 400;
+      color: var(--color-grey-60);
+    }
+  }
+
+  &__people {
+    @include mixins.flex-align-center;
+    margin-bottom: 30px;
+    border: var(--border);
+    border-radius: 100px;
+    padding: 10px;
+    width: 218px;
+    background-color: var(--color-dark-10);
+
+    @include mixins.laptop {
+      padding: 8px;
+      width: 174px;
+    }
+
+    @include mixins.tablet {
+      margin-bottom: 20px;
+      width: 134px;
+    }
+
+    &-icon {
+      border-radius: 50%;
+
+      &:first-child {
+        transform: translateX(0);
+      }
+
+      &:nth-child(2) {
+        transform: translateX(-14px);
+      }
+
+      &:nth-child(3) {
+        transform: translateX(-28px);
+      }
+
+      &:nth-child(4) {
+        transform: translateX(-42px);
+      }
+
+      @include mixins.laptop {
+        width: 50px;
+        height: 50px;
+      }
+
+      @include mixins.tablet {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+
+  &__explore {
+    &-title {
+      margin-bottom: 14px;
+      font-weight: 500;
+      color: var(--color-light);
+
+      @include mixins.small-tablet {
+        margin-bottom: 4px;
+      }
+    }
+
+    &-descr {
+      margin-bottom: 30px;
+      font-weight: 400;
+      color: var(--color-grey-60);
+
+      @include mixins.tablet {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__bottom {
+    border-top: var(--border);
+
+    &-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      @include mixins.tablet {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+
+  &__article {
+    border-left: var(--border);
+    padding: 50px 80px;
+    max-width: 585px;
+
+    @include mixins.laptop {
+      padding: 40px 50px;
+    }
+
+    @include mixins.small-laptop {
+      padding: 40px 20px;
+    }
+
+    @include mixins.tablet {
+      border-top: var(--border);
+      border-left: none;
+      max-width: 100%;
+    }
+
+    @include mixins.mobile {
+      padding: 30px 0 !important;
+    }
+
+    &:first-child {
+      border: none;
+      padding-left: 0;
+      max-width: 505px;
+
+      @include mixins.tablet {
+        padding: 40px 20px;
+        max-width: 100%;
+      }
+    }
+
+    &-main {
+      @include mixins.flex-all-between;
+      margin-bottom: 30px;
+    }
+
+    &-icon {
+      margin-bottom: 30px;
+    }
+
+    &-title {
+      margin-bottom: 4px;
+      font-weight: 500;
+      line-height: 1.5;
+      color: var(--color-light);
+    }
+
+    &-subtitle {
+      font-weight: 400;
+      color: var(--color-grey-50);
+    }
+
+    &-link {
+      @include mixins.flex-all-center;
+      border-radius: 50%;
+      width: 52px;
+      height: 52px;
+      background-color: var(--color-accent);
+    }
+  }
+}

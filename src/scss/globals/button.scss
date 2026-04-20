@@ -1,0 +1,33 @@
+@use '../mixins';
+
+.button {
+  gap: 10px;
+  justify-content: center;
+  border: var(--border);
+  border-radius: 12px;
+  padding: 18px 24px;
+  color: var(--color-grey-60);
+  background-color: var(--color-dark);
+  transition-duration: var(--transition);
+
+  @include mixins.laptop {
+    border-radius: 8px;
+    padding: 14px 20px;
+  }
+
+  &:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  &--stretched {
+    @include mixins.mobile {
+      width: 100%;
+    }
+  }
+
+  &--light-stretched {
+    width: 100%;
+    background-color: var(--color-dark-10);
+  }
+}

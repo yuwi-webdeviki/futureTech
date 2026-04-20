@@ -1,0 +1,33 @@
+@use '../mixins';
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+
+  &::after {
+    content: '';
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include mixins.mobile {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  &__yellow-arrow {
+    &::after {
+      background-image: url('../assets/icons/yellow-arrow.svg');
+    }
+  }
+
+  &__yellow-eye {
+    &::after {
+      background-image: url('../assets/icons/yellow-eye.svg');
+    }
+  }
+}
