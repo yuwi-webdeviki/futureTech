@@ -3,49 +3,6 @@
 .resources {
   &__head {
     border-top: var(--border);
-    border-bottom: var(--border);
-    background-color: var(--color-dark-10);
-    padding-block: 120px;
-
-    @include mixins.laptop {
-      padding-block: 80px;
-    }
-
-    @include mixins.mobile {
-      padding-block: 40px;
-    }
-
-    &-container {
-      @include mixins.flex-all-between;
-      gap: 10px;
-
-      @include mixins.tablet {
-        gap: 30px;
-        flex-direction: column;
-        align-items: start;
-      }
-    }
-
-    &-texts {
-      max-width: 900px;
-    }
-
-    &-subtitle {
-      margin-bottom: 16px;
-
-      @include mixins.laptop {
-        margin-bottom: 10px;
-      }
-    }
-
-    &-title {
-      font-weight: 500;
-      color: var(--color-light);
-    }
-
-    &-btn {
-      flex-shrink: 0;
-    }
   }
 
   &__main {

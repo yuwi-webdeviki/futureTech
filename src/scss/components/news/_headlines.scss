@@ -1,0 +1,237 @@
+@use '../../mixins';
+
+.headlines {
+  &__head {
+    border-bottom: var(--border);
+    padding-block: 130px 150px;
+
+    @include mixins.laptop {
+      padding-block: 60px 70px;
+    }
+
+    @include mixins.small-tablet {
+      padding-block: 40px;
+    }
+
+    &-container {
+      display: grid;
+      gap: 20px 80px;
+      align-items: center;
+      grid-template-columns: auto 1fr;
+
+      @include mixins.laptop {
+        gap: 20px 60px;
+      }
+
+      @include mixins.small-tablet {
+        grid-template-columns: 1fr;
+      }
+
+      @include mixins.mobile {
+        gap: 14px;
+      }
+    }
+  }
+
+  &__title,
+  &__subtitle {
+    font-weight: 500;
+    color: var(--color-light);
+  }
+
+  &__title {
+    grid-column: -1 / 1;
+
+    &-hidden {
+      display: none;
+
+      @include mixins.small-tablet {
+        display: inline-block;
+      }
+    }
+  }
+
+  &__subtitle {
+    @include mixins.small-tablet {
+      display: none;
+    }
+  }
+
+  &__article {
+    &-container {
+      @include mixins.flex-align-center;
+      gap: 80px;
+      padding-block: 80px;
+
+      @include mixins.laptop {
+        gap: 40px;
+        padding-block: 60px;
+      }
+
+      @include mixins.small-tablet {
+        gap: 30px;
+        flex-direction: column;
+        align-items: start;
+        padding-block: 40px;
+      }
+    }
+
+    &-img {
+      border-radius: 13px;
+
+      @include mixins.laptop {
+        width: 515px;
+        height: 325px;
+      }
+
+      @include mixins.small-tablet {
+        width: 358px;
+        height: 213px;
+      }
+    }
+
+    &-title {
+      margin-bottom: 30px;
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 1.5;
+      color: var(--color-light);
+
+      @include mixins.laptop {
+        margin-bottom: 14px;
+        font-size: 24px;
+      }
+
+      @include mixins.small-tablet {
+        margin-bottom: 6px;
+      }
+    }
+
+    &-descr {
+      margin-bottom: 50px;
+      line-height: 1.5;
+
+      @include mixins.laptop {
+        margin-bottom: 40px;
+      }
+
+      @include mixins.small-tablet {
+        margin-bottom: 20px;
+      }
+    }
+
+    &-meta {
+      @include mixins.flex-align-center;
+      gap: 50px;
+      margin-bottom: 50px;
+
+      @include mixins.laptop {
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      @include mixins.small-tablet {
+        margin-bottom: 20px;
+      }
+
+      @include mixins.mobile {
+        gap: 20px;
+      }
+
+      &-label {
+        margin-bottom: 4px;
+
+        @include mixins.laptop {
+          margin-bottom: 2px;
+        }
+      }
+
+      &-value {
+        color: var(--color-light);
+      }
+    }
+
+    &-btns {
+      @include mixins.flex-all-between;
+      gap: 10px;
+      flex-shrink: 0;
+
+      &-post {
+        @include mixins.flex-align-center;
+        gap: 10px;
+
+        @include mixins.laptop {
+          gap: 8px;
+        }
+      }
+    }
+  }
+
+  &__posts {
+    border-top: var(--border);
+
+    &-container {
+      @include mixins.flex-all-center;
+      gap: 30px;
+      padding-block: 80px;
+
+      @include mixins.laptop {
+        padding-block: 60px;
+      }
+
+      @include mixins.tablet {
+        flex-wrap: wrap;
+      }
+
+      @include mixins.small-tablet {
+        padding-block: 40px;
+      }
+    }
+  }
+
+  &__post {
+    &-img {
+      margin-bottom: 20px;
+      border-radius: 13px;
+
+      @include mixins.laptop {
+        margin-bottom: 16px;
+      }
+    }
+
+    &-title {
+      margin-bottom: 10px;
+      font-weight: 600;
+      line-height: 1.5;
+      color: var(--color-light);
+
+      @include mixins.laptop {
+        margin-bottom: 4px;
+      }
+    }
+
+    &-descr {
+      margin-bottom: 20px;
+
+      @include mixins.laptop {
+        margin-bottom: 16px;
+      }
+
+      @include mixins.small-tablet {
+        margin-bottom: 10px;
+      }
+    }
+
+    &-link {
+      width: 277px;
+
+      @include mixins.laptop {
+        width: 201px;
+      }
+
+      @include mixins.small-laptop {
+        width: 153px;
+      }
+    }
+  }
+}

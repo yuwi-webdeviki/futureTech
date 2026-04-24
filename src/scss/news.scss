@@ -1,0 +1,13 @@
+@use './mixins';
+@use './base';
+@use './globals';
+
+// components
+// base
+@use './components/header';
+@use './components/posts';
+@use './components/footer';
+
+// news
+@use './components/news/headlines';
+@use './components/news/videos';

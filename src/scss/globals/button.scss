@@ -31,3 +31,21 @@
     background-color: var(--color-dark-10);
   }
 }
+
+.post-button {
+  @include mixins.flex-all-center;
+  gap: 4px;
+  border: var(--border);
+  border-radius: 100px;
+  padding: 8px 16px;
+  width: fit-content;
+  background-color: var(--color-dark-10);
+
+  @include mixins.laptop {
+    padding: 6px 14px;
+  }
+
+  & img {
+    transform: translateY(-1px);
+  }
+}
