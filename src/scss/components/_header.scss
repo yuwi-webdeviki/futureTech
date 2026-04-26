@@ -127,11 +127,11 @@
     display: none;
 
     @include mixins.tablet {
+      z-index: var(--z-index-3);
       display: inline-flex;
       flex-direction: column;
       justify-content: space-between;
       border: none;
-      z-index: var(--z-index-3);
       padding: 8.5px 4.5px;
       width: 34px;
       height: 34px;

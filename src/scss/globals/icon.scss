@@ -21,13 +21,13 @@
 
   &__yellow-arrow {
     &::after {
-      background-image: url('../assets/icons/yellow-arrow.svg');
+      background-image: url('/assets/icons/yellow-arrow.svg');
     }
   }
 
   &__yellow-eye {
     &::after {
-      background-image: url('../assets/icons/yellow-eye.svg');
+      background-image: url('/assets/icons/yellow-eye.svg');
     }
   }
 }

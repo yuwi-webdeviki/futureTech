@@ -5,7 +5,7 @@ import { ViteMinifyPlugin } from 'vite-plugin-minify'
 
 export default defineConfig({
   root: './src',
-  // base: '/futureTech/',
+  base: '/futureTech/',
   server: {
     port: 3000,
     open: true,
