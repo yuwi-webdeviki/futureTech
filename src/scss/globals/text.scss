@@ -132,6 +132,10 @@
       @include mixins.laptop {
         font-size: 16px;
       }
+
+      @include mixins.mobile {
+        font-size: 14px;
+      }
     }
 
     &-default {

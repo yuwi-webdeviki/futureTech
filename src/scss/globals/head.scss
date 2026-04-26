@@ -15,6 +15,7 @@
 
   &-container {
     @include mixins.flex-all-between;
+    gap: 10px;
 
     @include mixins.tablet {
       gap: 30px;

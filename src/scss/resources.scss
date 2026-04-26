@@ -1,0 +1,12 @@
+@use './mixins';
+@use './base';
+@use './globals';
+
+// components
+// base
+@use './components/header';
+@use './components/footer';
+
+// resources
+@use './components/resources/nums';
+@use './components/resources/reports';

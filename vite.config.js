@@ -18,6 +18,7 @@ export default defineConfig({
       input: {
         main: './src/index.html',
         news: './src/news.html',
+        resources: './src/resources.html',
       },
     },
   },
